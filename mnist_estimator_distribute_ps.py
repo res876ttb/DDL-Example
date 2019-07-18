@@ -100,7 +100,7 @@ def main(_):
     x={'tf_x': test_x}, y=test_y, num_epochs=1, shuffle=False
   )
 
-  train_spec = tf.estimator.TrainSpec(input_fn=lambda:train_input_fn, max_steps=60000)
+  train_spec = tf.estimator.TrainSpec(input_fn=lambda:train_input_fn, max_steps=600)
   eval_spec = tf.estimator.EvalSpec(input_fn=test_input_fn)
   ret = tf.estimator.train_and_evaluate(classifier, train_spec, eval_spec)
 

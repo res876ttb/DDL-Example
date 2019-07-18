@@ -2,7 +2,7 @@
 
 import argparse
 parser = argparse.ArgumentParser()
-parser.add_argument('--numgpus', help='Number of GPUs to train.', default=1, type=int)
+parser.add_argument('--numgpus', help='Number of GPUs to train.', default=2, type=int)
 args = parser.parse_args()
 
 import tensorflow as tf
