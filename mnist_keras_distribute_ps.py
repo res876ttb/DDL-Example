@@ -26,12 +26,12 @@ environ = {
 print(environ)
 os.environ['TF_CONFIG'] = json.dumps(environ)
 
-# Configure distribute strategy
-ps_strategy = tf.contrib.distribute.ParameterServerStrategy(num_gpus_per_worker=args.numgpus)
-
 # Load data
 (x_train, y_train),(x_test, y_test) = mnist.load_data()
 x_train, x_test = x_train / 255.0, x_test / 255.0
+
+# Configure distribute strategy
+ps_strategy = tf.contrib.distribute.ParameterServerStrategy(num_gpus_per_worker=args.numgpus)
 
 # Build model
 with ps_strategy.scope():
